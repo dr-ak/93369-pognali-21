@@ -1,7 +1,7 @@
 # Личный проект «Погнали» [![Check status][check-image]][check-url]
 
 * Студент: [Александр Карпенко](https://up.htmlacademy.ru/adaptive/21/user/93369).
-* Наставник: `Неизвестно`.
+* Наставник: [Сергей Кравченко](https://htmlacademy.ru/profile/id13921).
 
 ---
 
