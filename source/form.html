@@ -30,12 +30,12 @@
       <nav class="main-nav main-nav--nojs">
         <button class="main-nav__toggle" type="button" aria-label="Открыть меню"></button>
         <a class="site-list__link" href="index.html">
-          <picture>
+          <picture class="main-nav__logo">
             <source media="(min-width: 1440px)" srcset="img/logo-desktop.png">
             <source media="(min-width: 768px)" srcset="img/logo-tablet.png">
             <img src="img/logo-mobile.png" width="96" height="15" alt="Логотип «Погнали?»">
           </picture>
-          <picture>
+          <picture class="main-nav__logo main-nav__logo--opened">
             <source media="(min-width: 1440px)" srcset="img/logo-dark-desktop.png">
             <source media="(min-width: 768px)" srcset="img/logo-dark-tablet.png">
             <img src="img/logo-dark-mobile.png" width="96" height="15" alt="Логотип «Погнали?»">
@@ -60,7 +60,7 @@
         </ul>
         <ul class="main-nav__list action-list">
           <li class="action-list__item">
-            <a href="tell:88005558628" aria-label="Позвонить">
+            <a href="tel:88005558628" aria-label="Позвонить">
               <svg width="18" height="18">
                 <use xlink:href="img/icon-lib.svg#icon-alternative-phone"></use>
               </svg>
@@ -71,7 +71,7 @@
             </a>
           </li>
           <li class="acton-list__item">
-            <a href="" aria-label="Написать">
+            <a href="mailto:mail@htmlacademy.ru" aria-label="Написать">
               <svg width="18" height="16">
                 <use xlink:href="img/icon-lib.svg#icon-alternative-mail"></use>
               </svg>
