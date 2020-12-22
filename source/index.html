@@ -30,12 +30,12 @@
       <nav class="main-nav main-nav--nojs">
         <button class="main-nav__toggle" type="button" aria-label="Открыть меню"></button>
         <a class="site-list__link">
-          <picture>
+          <picture class="main-nav__logo">
             <source media="(min-width: 1440px)" srcset="img/logo-desktop.png">
             <source media="(min-width: 768px)" srcset="img/logo-tablet.png">
             <img src="img/logo-mobile.png" width="96" height="15" alt="Логотип «Погнали?»">
           </picture>
-          <picture>
+          <picture class="main-nav__logo main-nav__logo--opened">
             <source media="(min-width: 1440px)" srcset="img/logo-dark-desktop.png">
             <source media="(min-width: 768px)" srcset="img/logo-dark-tablet.png">
             <img src="img/logo-dark-mobile.png" width="96" height="15" alt="Логотип «Погнали?»">
@@ -60,7 +60,7 @@
         </ul>
         <ul class="main-nav__list action-list">
           <li class="action-list__item">
-            <a href="tell:88005558628" aria-label="Позвонить">
+            <a href="tel:88005558628" aria-label="Позвонить">
               <svg width="18" height="18">
                 <use xlink:href="img/icon-lib.svg#icon-alternative-phone"></use>
               </svg>
@@ -71,7 +71,7 @@
             </a>
           </li>
           <li class="acton-list__item">
-            <a href="" aria-label="Написать">
+            <a href="mailto:mail@htmlacademy.ru" aria-label="Написать">
               <svg width="18" height="16">
                 <use xlink:href="img/icon-lib.svg#icon-alternative-mail"></use>
               </svg>
@@ -120,24 +120,24 @@
           <p>
             «Лучшее приложение, что я видел в жизни!»
           </p>
-          <cite>
+          <cite class="promo__review-author">
             Мурат Эльтазин главный редактор газеты «гаджетлайф»
           </cite>
         </blockquote>
-        <ul class="promo__list">
+        <ol class="promo__list">
           <li class="promo__item">
-            Выберите направление<span>1</span>
+            Выберите направление
           </li>
           <li class="promo__item">
-            Изучите идеи путешественников<span>2</span>
+            Изучите идеи путешественников
           </li>
           <li class="promo__item">
-            Находите тех, кто похож на вас<span>3</span>
+            Находите тех, кто похож на вас
           </li>
           <li class="promo__item">
-            Путешествуйте вместе!<span>4</span>
+            Путешествуйте вместе!
           </li>
-        </ul>
+        </ol>
       </section>
 
       <section class="about-us">
@@ -158,52 +158,64 @@
         </p>
         <ul class="directions__list">
           <li class="direction__item">
-            <h3 class="direction__title">Таиланд</h3>
-            <p class="direction__text">Джунгли зовут!</p>
-            <p class="direction__user-count">18321</p>
+            <div class="direction__info">
+              <h3 class="direction__title">Таиланд</h3>
+              <p class="direction__text">Джунгли зовут!</p>
+              <p class="direction__user-count">18321</p>
+            </div>
             <picture>
               <source media="(min-width: 768px)" srcset="img/thailand-tablet.png">
               <img src="img/thailand-mobile.png" width="270" height="110" alt="Таиланд">
             </picture>
-            <img src="img/flag-thailand.png" width="35" height="24" alt="Флаг Таиланда">
+            <img src="img/flag-thailand.svg" width="35" height="24" alt="Флаг Таиланда">
           </li>
           <li class="direction__item">
-            <h3 class="direction__title">Франция</h3>
-            <p class="direction__text">Трэ бьен, манифик!</p>
-            <p class="direction__user-count">12518</p>
+            <div class="direction__info">
+              <h3 class="direction__title">Франция</h3>
+              <p class="direction__text">Трэ бьен, манифик!</p>
+              <p class="direction__user-count">12518</p>
+            </div>
             <picture>
               <source media="(min-width: 768px)" srcset="img/france-tablet.png">
               <img src="img/france-mobile.png" width="270" height="110" alt="Франция">
             </picture>
-            <img src="img/flag-france.png" width="35" height="24" alt="Флаг Франции">
+            <img src="img/flag-france.svg" width="35" height="24" alt="Флаг Франции">
           </li>
           <li class="direction__item">
-            <h3 class="direction__title">Чехия</h3>
-            <p class="direction__text">Закоулки старой Европы</p>
-            <p class="direction__user-count">5326</p>
+            <div class="direction__info">
+              <h3 class="direction__title">Чехия</h3>
+              <p class="direction__text">Закоулки старой Европы</p>
+              <p class="direction__user-count">5326</p>
+            </div>
             <picture>
               <source media="(min-width: 768px)" srcset="img/czech-tablet.png">
               <img src="img/czech-mobile.png" width="270" height="110" alt="Чехия">
             </picture>
-            <img src="img/flag-czech.png" width="35" height="24" alt="Флаг Чехии">
+            <img src="img/flag-czech.svg" width="35" height="24" alt="Флаг Чехии">
           </li>
         </ul>
         <a class="button" href="form.html">Показать всё</a>
       </section>
 
       <secton class="companions">
-        <h2 class="block-title">Попутчики</h2>
+        <div class="companions__header">
+          <h2 class="block-title">Попутчики</h2>
+          <p>Все мы индивидуальны и у каждого свой взгляд на идеальный отдых. Одному нужен пляж и коктейль, а другому маршрут для хайкинга.</p>
+          <p>Теперь можно легко найти единомышленников!</p>
+        </div>
         <ul class="companions__list">
           <li class="companions__item">
             <article class="catalog-item">
               <a href=""><h3 class="catalog-item__title">Таня Фирсова</h3></a>
-              <picture>
-                <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-user1-tablet.webp 1x, img/photo-user1-tablet@2x.webp 2x">
-                <source type="image/webp" srcset="img/photo-user1-mobile.webp 1x, img/photo-user1-mobile@2x.webp 2x">
+              <a href="">
+                <picture>
+                  <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-user1-tablet.webp 1x, img/photo-user1-tablet@2x.webp 2x">
+                  <source type="image/webp" srcset="img/photo-user1-mobile.webp 1x, img/photo-user1-mobile@2x.webp 2x">
 
-                <source media="(min-width: 768px)" srcset="img/photo-user1-tablet.png 1x, img/photo-user1-tablet@2x.png 2x">
-                <img src="img/photo-user1-mobile.png" srcset="img/photo-user1-mobile@2x.png 2x" alt="Фото Тани Фирсовой">
-              </picture>
+                  <source media="(min-width: 768px)" srcset="img/photo-user1-tablet.png 1x, img/photo-user1-tablet@2x.png 2x">
+                  <img src="img/photo-user1-mobile.png" srcset="img/photo-user1-mobile@2x.png 2x" alt="Фото Тани Фирсовой">
+                </picture>
+              </a>
               <svg width="60" height="60" viewBox="0 0 60 60" fill="none" font-family="'Blogger Sans', 'Arial', sans-serif" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="30" cy="30" r="30" fill="black" fill-opacity="0.6"/>
                 <circle cx="30" cy="30" r="28" transform="rotate(-85 30 30)" stroke="#FF8D30" stroke-width="4" stroke-linecap="round" stroke-dasharray="172, 180" stroke-dashoffset="5"/>
@@ -213,13 +225,13 @@
               </svg>
               <ul class="catalog-item__flags">
                 <li class="catalot-item__flag">
-                  <img src="img/flag-sri-lanka.png" alt="Флаг Шри-Ланки" width="35" height="24">
+                  <img src="img/flag-sri-lanka.svg" alt="Флаг Шри-Ланки" width="35" height="24">
                 </li>
                 <li class="catalot-item__flag">
-                  <img src="img/flag-thailand.png" alt="Флаг Тайланда" width="35" height="24">
+                  <img src="img/flag-thailand.svg" alt="Флаг Тайланда" width="35" height="24">
                 </li>
                 <li class="catalot-item__flag">
-                  <img src="img/flag-seychelles.png" alt="Флаг Сейшел" width="35" height="24">
+                  <img src="img/flag-seychelles.svg" alt="Флаг Сейшел" width="35" height="24">
                 </li>
               </ul>
               <p>#ЗОЖ #ПП #Фитнес #пляж  #авокадо #смузи</p>
@@ -250,13 +262,15 @@
           <li class="companions__item">
             <article class="catalog-item">
               <a href=""><h3 class="catalog-item__title">Петя Демин</h3></a>
-              <picture>
-                <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-user2-tablet.webp 1x, img/photo-user2-tablet@2x.webp 2x">
-                <source type="image/webp" srcset="img/photo-user2-mobile.webp 1x, img/photo-user2-mobile@2x.webp 2x">
+              <a href="">
+                <picture>
+                  <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-user2-tablet.webp 1x, img/photo-user2-tablet@2x.webp 2x">
+                  <source type="image/webp" srcset="img/photo-user2-mobile.webp 1x, img/photo-user2-mobile@2x.webp 2x">
 
-                <source media="(min-width: 768px)" srcset="img/photo-user2-tablet.png 1x, img/photo-user2-tablet@2x.png 2x">
-                <img src="img/photo-user2-mobile.png" srcset="img/photo-user2-mobile@2x.png 2x" alt="Фото Пети Демина">
-              </picture>
+                  <source media="(min-width: 768px)" srcset="img/photo-user2-tablet.png 1x, img/photo-user2-tablet@2x.png 2x">
+                  <img src="img/photo-user2-mobile.png" srcset="img/photo-user2-mobile@2x.png 2x" alt="Фото Пети Демина">
+                </picture>
+              </a>
               <svg width="60" height="60" viewBox="0 0 60 60" fill="none" font-family="'Blogger Sans', 'Arial', sans-serif" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="30" cy="30" r="30" fill="black" fill-opacity="0.6"/>
                 <circle cx="30" cy="30" r="28" transform="rotate(-85 30 30)" stroke="#FF8D30" stroke-width="4" stroke-linecap="round" stroke-dasharray="172, 180" stroke-dashoffset="25"/>
@@ -266,10 +280,10 @@
               </svg>
               <ul class="catalog-item__flags">
                 <li class="catalot-item__flag">
-                  <img src="img/flag-belgium.png" alt="Флаг Бельгии" width="35" height="24">
+                  <img src="img/flag-belgium.svg" alt="Флаг Бельгии" width="35" height="24">
                 </li>
                 <li class="catalot-item__flag">
-                  <img src="img/flag-czech.png" alt="Флаг Чехии" width="35" height="24">
+                  <img src="img/flag-czech.svg" alt="Флаг Чехии" width="35" height="24">
                 </li>
               </ul>
               <p>#бургер #бар #футбол #концерт #крафт</p>
@@ -306,36 +320,36 @@
         <dl class="adding-profile__options">
           <div class="adding-profile__item">
             <dt class="adding-profile__option">
-              <span>1</span>Базовое размещение
+              Базовое размещение
             </dt>
-            <dd class="week-product__value">Бесплатно</dd>
+            <dd class="adding-profile__value">Бесплатно</dd>
           </div>
           <div class="adding-profile__item">
             <dt class="adding-profile__option">
-              <span>2</span>Вывод на первых позициях
+              Вывод на первых позициях
             </dt>
-            <dd class="week-product__value">99 руб./мес</dd>
+            <dd class="adding-profile__value">99 руб./мес</dd>
           </div>
           <div class="adding-profile__item">
             <dt class="adding-profile__option">
-              <span>3</span>Кастомный цвет карточки
+              Кастомный цвет карточки
             </dt>
-            <dd class="week-product__value">59 руб./мес</dd>
+            <dd class="adding-profile__value">59 руб./мес</dd>
           </div>
         </dl>
         <a href="">Показать тарифы для бизнеса</a>
       </section>
 
-      <section class="registration">
+      <section class="singup">
         <h2 class="block-title">Заинтересовались?</h2>
         <p>
           Зарегистрируйтесь, это быстро и бесплатно! Уже зарегистрированы? Тогда скорее
-          <a class="registration__authorization-link" href="">авторизуйтесь</a>.
+          <a class="singup__authorization-link" href="">авторизуйтесь</a>.
         </p>
-        <form class="registration__form" action="https://echo.htmlacademy.ru">
+        <form class="singup__form" action="https://echo.htmlacademy.ru" method="post">
           <label class="visually-hidden" for="mail-field">Поле email</label>
           <input type="search" id="mail-field" name="mail" autocomplete="on" placeholder="E-mail">
-          <button type="submit" aria-label="Кнопка поиска"></button>
+          <button type="submit" aria-label="Кнопка подписки"></button>
         </form>
         <p>Остались вопросы? Мы с радостью на них ответим!</p>
         <ul class="main-nav__list action-list">
@@ -410,6 +424,45 @@
         </p>
       </div>
     </footer>
+
+    <div class="modal modal-business-tariffs">
+      <h2 class="block-title">Добавить в корзину</h2>
+      <dl class="modal-business-tariffs__options">
+        <div class="modal-business-tariffs__item">
+          <dt class="modal-business-tariffs__option">
+            Реклама у блоггера
+          </dt>
+          <dd class="modal-business-tariffs__value">
+            300 000 руб./пост
+          </dd>
+        </div>
+        <div class="modal-business-tariffs__item">
+          <dt class="modal-business-tariffs__option">
+            Накрутка подписчиков
+          </dt>
+          <dd class="modal-business-tariffs__value">
+            от 1 руб./шт.
+          </dd>
+        </div>
+        <div class="modal-business-tariffs__item">
+          <dt class="modal-business-tariffs__option">
+            Лайки от ботов
+          </dt>
+          <dd class="modal-business-tariffs__value">
+            от 20 коп./лайк
+          </dd>
+        </div>
+        <div class="modal-business-tariffs__item">
+          <dt class="modal-business-tariffs__option">
+            Ваш продакт-плейсмент
+          </dt>
+          <dd class="modal-business-tariffs__value">
+            Индивидуально
+          </dd>
+        </div>
+      </dl>
+      <button type="button">Закрыть окно</button>
+    </div>
 
   </body>
 </html>
