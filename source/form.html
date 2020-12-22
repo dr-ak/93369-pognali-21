@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML Academy: Погнали</title>
+    <link rel="preload" href="fonts/bloggersans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/bloggersans.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="fonts/bloggersans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/bloggersans-bold.woff" as="font" type="font/woff" crossorigin="anonymous">
+
+    <link rel="preload" href="fonts/bloggersans-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/bloggersans-italic.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="fonts/bloggersans-bolditalic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/bloggersans-bolditalic.woff" as="font" type="font/woff" crossorigin="anonymous">
+
+    <link rel="preload" href="fonts/bloggersans-light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/bloggersans-light.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="fonts/bloggersans-lightitalic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/bloggersans-lightitalic.woff" as="font" type="font/woff" crossorigin="anonymous">
+
+    <link rel="preload" href="fonts/bloggersans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/bloggersans-medium.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="fonts/bloggersans-mediumitalic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/bloggersans-mediumitalic.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link href="css/style.min.css" rel="stylesheet">
+  </head>
+  <body class="page__body">
+    <header class="page-header">
+      <nav class="main-nav main-nav--nojs">
+        <button class="main-nav__toggle" type="button" aria-label="Открыть меню"></button>
+        <a class="site-list__link" href="index.html">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="img/logo-desktop.png">
+            <source media="(min-width: 768px)" srcset="img/logo-tablet.png">
+            <img src="img/logo-mobile.png" width="96" height="15" alt="Логотип «Погнали?»">
+          </picture>
+          <picture>
+            <source media="(min-width: 1440px)" srcset="img/logo-dark-desktop.png">
+            <source media="(min-width: 768px)" srcset="img/logo-dark-tablet.png">
+            <img src="img/logo-dark-mobile.png" width="96" height="15" alt="Логотип «Погнали?»">
+          </picture>
+        </a>
+        <ul class="main-nav__list site-list">
+          <li class="site-list__item">
+            <a href="">
+              О сервисе
+            </a>
+          </li>
+          <li class="site-list__item">
+            <a>
+              Направления
+            </a>
+          </li>
+          <li class="site-list__item">
+            <a href="catalog.html">
+              Попутчики
+            </a>
+          </li>
+        </ul>
+        <ul class="main-nav__list action-list">
+          <li class="action-list__item">
+            <a href="tell:88005558628" aria-label="Позвонить">
+              <svg width="18" height="18">
+                <use xlink:href="img/icon-lib.svg#icon-alternative-phone"></use>
+              </svg>
+              <svg width="18" height="17">
+                <use xlink:href="img/icon-lib.svg#icon-phone"></use>
+              </svg>
+              8 800 555-86-28
+            </a>
+          </li>
+          <li class="acton-list__item">
+            <a href="" aria-label="Написать">
+              <svg width="18" height="16">
+                <use xlink:href="img/icon-lib.svg#icon-alternative-mail"></use>
+              </svg>
+              <svg width="23" height="25">
+                <use xlink:href="img/icon-lib.svg#icon-mail"></use>
+              </svg>
+              mail@htmlacademy.ru
+            </a>
+          </li>
+          <li class="action-list__item">
+            <a href="" >Авторизация</a>
+          </li>
+        </ul>
+      </nav>
+      <ul class="page-header__social social-list">
+        <li class="social-list__item social-list__item--fb">
+          <a href="" aria-label="Погнали в Facebook">
+            <svg width="11" height="21">
+              <use xlink:href="img/icon-lib.svg#icon-fb"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-list__item social-list__item--vk">
+          <a href="" aria-label="Погнали в Вконтакте">
+            <svg width="23" height="12">
+              <use xlink:href="img/icon-lib.svg#icon-vk"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-list__item social-list__item--insta">
+          <a href="" aria-label="Погнали в Instagram">
+            <svg width="17" height="17">
+              <use xlink:href="img/icon-lib.svg#icon-insta"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </header>
+
+    <main class="page-main">
+      <div class="intro">
+        <h1 class="main-title"></h1>
+      </div>
+      <section class="user-profile">
+        <h2 class="visually-hidden">Профиль пользоватля</h2>
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" font-family="'Blogger Sans', 'Arial', sans-serif" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="30" r="30" fill="black" fill-opacity="0.6"/>
+          <circle cx="30" cy="30" r="28" transform="rotate(-85 30 30)" stroke="#FF8D30" stroke-width="4" stroke-linecap="round" stroke-dasharray="172, 180" stroke-dashoffset="25"/>
+          <text x="50%" y="33" text-anchor="middle" fill="white" font-size="24" font-weight="bold">80</text>
+          <line opacity="0.3" x1="15" y1="36.5" x2="45" y2="36.5" stroke="white"/>
+          <text x="50%" y="49" text-anchor="middle" fill="white" font-size="14">level</text>
+        </svg>
+        <picture>
+          <source type="image/webp" media="(min-width: 1440px)" srcset="img/photo-form-user2-desktop.webp 1x, img/photo-form-user2-desktop@2x.webp 2x">
+          <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-form-user2-tablet.webp 1x, img/photo-form-user2-tablet@2x.webp 2x">
+          <source type="image/webp" srcset="img/photo-form-user2-mobile.webp 1x, img/photo-form-user2-mobile@2x.webp 2x">
+
+          <source media="(min-width: 1440px)" srcset="img/photo-form-user2-desktop.png 1x, img/photo-form-user2-desktop@2x.png 2x">
+          <source media="(min-width: 768px)" srcset="img/photo-form-user2-tablet.png 1x, img/photo-form-user2-tablet@2x.png 2x">
+          <img src="img/photo-form-user2-mobile.png" srcset="img/photo-form-user2-mobile@2x.png 2x" alt="Большая корзинка для игрушек">
+        </picture>
+        <a href="" class="button button-type2">Сменить фото</a>
+        <p>#бургер #бар #футбол #концерт #крафт</p>
+        <ul class="user-profile__travel-types">
+          <li class="user-profile__travel-type">
+            <svg width="21" height="21">
+              <use xlink:href="img/icon-lib.svg#icon-plane"></use>
+            </svg>
+          </li>
+          <li class="user-profile__travel-type">
+            <svg width="17" height="19">
+              <use xlink:href="img/icon-lib.svg#icon-bus"></use>
+            </svg>
+          </li>
+          <li class="user-profile__travel-type">
+            <svg width="24" height="24">
+              <use xlink:href="img/icon-lib.svg#icon-bicycle"></use>
+            </svg>
+          </li>
+          <li class="user-profile__travel-type">
+            <svg width="21" height="23">
+              <use xlink:href="img/icon-lib.svg#icon-run"></use>
+            </svg>
+          </li>
+        </ul>
+      </section>
+
+      <section class="plans">
+        <h2 class="block-title">Мои планы</h2>
+        <ul class="plans__list">
+          <li class="plans__item">
+            <h3 class="plans__title">Франция, Италия</h3>
+            <div>3 попутчик</div>
+            <div>26 мар &mdash; 29мар</div>
+            <a href="">Изменить</a>
+          </li>
+          <li class="plans__item">
+            <h3 class="plans__title">Таиланд, Индонезия</h3>
+            <div>1 попутчик</div>
+            <div>1 июл &mdash; 15 июл</div>
+            <a href="">Изменить</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="adding-plan">
+        <h2 class="block-title">Добавить план:</h2>
+        <ul class="adding-plan__marker-list">
+          <li class="adding-plan__marker adding-plan__marker--active"></li>
+          <li class="adding-plan__marker"></li>
+          <li class="adding-plan__marker"></li>
+        </ul>
+        <form class="plan-form" action="https://echo.htmlacademy.ru">
+          <fieldset class=plan-form__step1>
+            <div class="plan-form__header">
+              <h3 class="plan-form__title">Шаг 1.<br>Даты пребывания</h3>
+              <p>
+                Укажите предпочтительное количество попутчиков, которых вы хотели бы позвать в поездку, и ее предполагаемую длительность.
+              </p>
+            </div>
+            <ul class="plan-form__marker-list">
+              <li class="plan-form__marker plan-form__marker--active">Даты</li>
+              <li class="plan-form__marker">Маршрут</li>
+              <li class="plan-form__marker">Развлечения</li>
+            </ul>
+            <div class="plan-form__number-options">
+              <ul class="plan-form__number-options-list">
+                <li class="paln-form__number-option">
+                  Ищу попутчиков
+                  <label class="plan-form__count-companions">
+                    <a class="plan-form__increase" href="" aria-label="Увеличить на 1"></a>
+                    <input type="number" name="count-copanions" value="2">
+                    <a class="plan-form__decrease" href="" aria-label="Уменьшить на 1"></a>
+                  </label>
+                  чел.
+                </li>
+                <li class="paln-form__number-option">
+                  Длительность
+                  <label class="plan-form__duration">
+                    <a  class="plan-form__increase" href="" aria-label="Увеличить на 1"></a>
+                    <input type="number" name="duration" value="2">
+                    <a  class="plan-form__decrease" href="" aria-label="Уменьшить на 1"></a>
+                  </label>
+                  дн.
+                </li>
+              </ul>
+              <input class="plan-form__checkbox visually-hidden" id="with-children" type="checkbox" name="with-children">
+              <label class="order-form__name" for="with-children">
+                Можно с детьми
+              </label>
+            </div>
+            <table class="plan-form__table">
+              <caption>
+                <a class="prev" href="" aria-label="Предыдущий месяц"></a>
+                Март 2019
+                <a class="next" href="" aria-label="Следующий месяц"></a>
+              </caption>
+              <thead>
+                <tr>
+                  <th>Пн</th>
+                  <th>Вт</th>
+                  <th>Ср</th>
+                  <th>Чт</th>
+                  <th>Пт</th>
+                  <th>Сб</th>
+                  <th>Вс</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="plan-form__cell"><a>23</a></td>
+                  <td class="plan-form__cell"><a>24</a></td>
+                  <td class="plan-form__cell"><a>25</a></td>
+                  <td class="plan-form__cell"><a>26</a></td>
+                  <td class="plan-form__cell"><a>27</a></td>
+                  <td class="plan-form__cell"><a>28</a></td>
+                  <td class="plan-form__cell"><a>1</a></td>
+                </tr>
+                <tr>
+                  <td class="plan-form__cell"><a>2</a></td>
+                  <td class="plan-form__cell"><a>3</a></td>
+                  <td class="plan-form__cell"><a>4</a></td>
+                  <td class="plan-form__cell"><a>5</a></td>
+                  <td class="plan-form__cell"><a>6</a></td>
+                  <td class="plan-form__cell"><a>7</a></td>
+                  <td class="plan-form__cell"><a>8</a></td>
+                </tr>
+                <tr>
+                  <td class="plan-form__cell"><a>9</a></td>
+                  <td class="plan-form__cell"><a>10</a></td>
+                  <td class="plan-form__cell"><a>11</a></td>
+                  <td class="plan-form__cell"><a>12</a></td>
+                  <td class="plan-form__cell"><a>13</a></td>
+                  <td class="plan-form__cell"><a>14</a></td>
+                  <td class="plan-form__cell"><a>15</a></td>
+                </tr>
+                <tr>
+                  <td class="plan-form__cell"><a>16</a></td>
+                  <td class="plan-form__cell"><a>17</a></td>
+                  <td class="plan-form__cell"><a>18</a></td>
+                  <td class="plan-form__cell"><a>19</a></td>
+                  <td class="plan-form__cell"><a>20</a></td>
+                  <td class="plan-form__cell"><a>21</a></td>
+                  <td class="plan-form__cell"><a>22</a></td>
+                </tr>
+                <tr>
+                  <td class="plan-form__cell"><a>23</a></td>
+                  <td class="plan-form__cell"><a>24</a></td>
+                  <td class="plan-form__cell"><a>25</a></td>
+                  <td class="plan-form__cell plan-form__cell--hover"><a href="">26</a></td>
+                  <td class="plan-form__cell plan-form__cell--chosen"><a href="">27</a></td>
+                  <td class="plan-form__cell plan-form__cell--chosen"><a href="">28</a></td>
+                  <td class="plan-form__cell"><a href="">29</a></td>
+                </tr>
+                <tr>
+                  <td class="plan-form__cell"><a href="">30</a></td>
+                  <td class="plan-form__cell"><a href="">31</a></td>
+                  <td class="plan-form__cell"><a href="">1</a></td>
+                  <td class="plan-form__cell"><a href="">2</a></td>
+                  <td class="plan-form__cell"><a href="">3</a></td>
+                  <td class="plan-form__cell"><a href="">4</a></td>
+                  <td class="plan-form__cell"><a href="">5</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="plan-form__footer">
+              <a class="button button-type2" href="">Следующий шаг</a>
+            </div>
+          </fieldset>
+          <fieldset class=plan-form__step2>
+            <div class="plan-form__header">
+              <h3 class="plan-form__title">Шаг 2.<br>Маршрут</h3>
+              <p>
+                Укажите страны, которые вы хотели бы посетить. Это может быть одна или сразу несколько.
+              </p>
+            </div>
+            <ul class="plan-form__country-list">
+              <li class="plan-form__country">
+                <label class="plan-form__name">
+                  <input id="country-name1" type="text" name="country-name1" placeholder="Босния и герцеговина">
+                  <a class="plan-form__open-list" href="" aria-label="Открыть список стран"></a>
+                </label>
+                <span>
+                  <img src="img/flag-bosnia-and-herzegovina.svg" alt="Флаг Боснии и Герцеговины" width="35" height="24">
+                </span>
+                <a class="plan-form__exclude" href="" aria-label="Убрать страну из списка"></a>
+              </li>
+              <li class="plan-form__country">
+                <label class="plan-form__name">
+                  <input id="country-name2" type="text" name="country-name2" placeholder="Чехия">
+                  <a class="plan-form__open-list" href="" aria-label="Открыть список стран"></a>
+                </label>
+                <span>
+                  <img src="img/flag-czech.svg" alt="Флаг Чехии" width="35" height="24">
+                </span>
+                <a class="plan-form__exclude" href=""  aria-label="Убрать страну из списка"></a>
+              </li>
+              <li class="plan-form__country">
+                <label class="plan-form__name">
+                  <input id="country-name3" type="text" name="country-name3" placeholder="Выберите страну">
+                  <a class="plan-form__close-list" href="" aria-label="Закрыть список стран"></a>
+                  <div class="plan-form__country-names">
+                    <ul class="plan-form__letters-list">
+                      <li class="plan-form__letter"><a href="">А</a></li>
+                      <li class="plan-form__letter"><a href="">Б</a></li>
+                      <li class="plan-form__letter"><a href="">В</a></li>
+                      <li class="plan-form__letter"><a href="">Г</a></li>
+                      <li class="plan-form__letter"><a href="">Д</a></li>
+                      <li class="plan-form__letter"><a href="">И</a></li>
+                      <li class="plan-form__letter"><a href="">З</a></li>
+                      <li class="plan-form__letter"><a href="">И</a></li>
+                      <li class="plan-form__letter"><a href="">К</a></li>
+                      <li class="plan-form__letter"><a href="">Л</a></li>
+                      <li class="plan-form__letter"><a href="">М</a></li>
+                      <li class="plan-form__letter"><a href="">Н</a></li>
+                      <li class="plan-form__letter"><a href="">О</a></li>
+                      <li class="plan-form__letter"><a href="">П</a></li>
+                      <li class="plan-form__letter"><a href="">Р</a></li>
+                      <li class="plan-form__letter"><a href="">С</a></li>
+                      <li class="plan-form__letter"><a href="">Т</a></li>
+                      <li class="plan-form__letter"><a href="">У</a></li>
+                      <li class="plan-form__letter"><a href="">Ф</a></li>
+                      <li class="plan-form__letter"><a href="">Х</a></li>
+                      <li class="plan-form__letter"><a href="">Ч</a></li>
+                      <li class="plan-form__letter"><a href="">Ш</a></li>
+                      <li class="plan-form__letter"><a href="">Э</a></li>
+                      <li class="plan-form__letter"><a href="">Ю</a></li>
+                      <li class="plan-form__letter"><a href="">Я</a></li>
+                    </ul>
+                    <ul class="plan-form__country-names-list">
+                      <li class="country-name"><a href="">Австралия</a></li>
+                      <li class="country-name"><a href="">Австрия</a></li>
+                      <li class="country-name"><a href="">Азербайджан</a></li>
+                      <li class="country-name"><a href="">Албания</a></li>
+                      <li class="country-name"><a href="">Алжир</a></li>
+                      <li class="country-name"><a href="">Ангола</a></li>
+                      <li class="country-name"><a href="">Андорра</a></li>
+                      <li class="country-name"><a href="">Антигуа и Барбуда</a></li>
+                      <li class="country-name"><a href="">Аргентина</a></li>
+                      <li class="country-name"><a href="">Армения</a></li>
+                      <li class="country-name"><a href="">Афганистан</a></li>
+                    </ul>
+                  </div>
+                </label>
+                <a class="plan-form__exclude" href="" aria-label="Убрать страну из списка"></a>
+              </li>
+              <li class="plan-form__country">
+                <label class="plan-form__name">
+                  <input id="country-name4" type="text" name="country-name4" placeholder="Добавить страну">
+                  <a class="plan-form__include" href="" aria-label="Добавить страну"></a>
+                </label>
+              </li>
+            </ul>
+            <div class="plan-form__footer">
+              <a class="button button-type2" href="">Следующий шаг</a>
+              <a class="plan-form__step-back" href="">На шаг назад</a>
+            </div>
+          </fieldset>
+          <fieldset class=plan-form__step3>
+            <div class="plan-form__header">
+              <h3 class="plan-form__title">Шаг 3.<br>Развлечения</h3>
+              <p>
+                Наконец, расскажите о своих планах времяпровождения. Можно писать в свободной форме и ставить тэги.
+              </p>
+            </div>
+            <ul class="plan-form__entertainments-list">
+              <li class="plan-form__entertainments">
+                <label for="entertainments-country1">
+                  Босния и Герцеговина<img src="img/flag-bosnia-and-herzegovina.svg" alt="Флаг Боснии и Герцеговины" width="35" height="24">
+                </label>
+                <textarea class="plan-form__textarea" id="entertainments-country1" name="entertainments-country1" placeholder="План действий"></textarea>
+              </li>
+              <li class="plan-form__entertainments">
+                <label for="entertainments-country2">
+                  Чехия<img src="img/flag-czech.svg" alt="Флаг Чехии" width="35" height="24">
+                </label>
+                <textarea class="plan-form__textarea" id="entertainments-country2" name="entertainments-country2">Пить пиво и лазить по старым замкам, наслаждаться архитектурой и вот это все.
+                </textarea>
+              </li>
+            </ul>
+            <div class="plan-form__footer">
+              <a class="button button-type2" href="">Следующий шаг</a>
+              <a class="plan-form__step-back" href="">На шаг назад</a>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <div class="wrapper page-footer__wrapper">
+        <a href="index.html" class="page-footer__logo">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="img/logo-dark-desktop.png">
+            <source media="(min-width: 768px)" srcset="img/logo-dark-tablet.png">
+            <img src="img/logo-dark-mobile.png" width="96" height="15" alt="Логотип «Погнали?»">
+          </picture>
+        </a>
+        <ul class="page-header__social social-list">
+          <li class="social-list__item social-list__item--fb">
+            <a href="" aria-label="Погнали в Facebook">
+              <svg width="11" height="21">
+                <use xlink:href="img/icon-lib.svg#icon-fb"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-list__item social-list__item--vk">
+            <a href="" aria-label="Погнали в Вконтакте">
+              <svg width="23" height="12">
+                <use xlink:href="img/icon-lib.svg#icon-vk"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-list__item social-list__item--insta">
+            <a href="" aria-label="Погнали в Instagram">
+              <svg width="17" height="17">
+                <use xlink:href="img/icon-lib.svg#icon-insta"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <p class="page-footer__copyright">
+          Разработано
+          <a href="https://htmlacademy.ru/intensive/adaptive">
+            <img src="img/htmlacademy.svg" alt="Логотип HTMLAcademy" width="27" height="34">
+          </a>
+        </p>
+      </div>
+    </footer>
+
+  </body>
+</html>
