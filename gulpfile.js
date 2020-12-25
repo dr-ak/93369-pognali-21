@@ -11,7 +11,7 @@ const uglify = require("gulp-uglify-es").default;
 const imagemin = require("gulp-imagemin");
 const webp = require("gulp-webp");
 const svgstore = require("gulp-svgstore");
-const cheerio = require('gulp-cheerio');
+const cheerio = require("gulp-cheerio");
 const del = require("del");
 const sync = require("browser-sync").create();
 
@@ -27,7 +27,7 @@ const styles = () => {
       autoprefixer(),
       csso()
     ]))
-    .pipe(rename({ suffix: '.min'}))
+    .pipe(rename({ suffix: ".min"}))
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/css"))
     .pipe(sync.stream());
@@ -49,7 +49,7 @@ const scripts = () => {
   return gulp.src("source/js/*.js")
     .pipe(plumber())
     .pipe(uglify())
-    .pipe(rename({ suffix: '.min'}))
+    .pipe(rename({ suffix: ".min"}))
     .pipe(gulp.dest("build/js"))
     .pipe(sync.stream());
 }
@@ -89,8 +89,10 @@ const sprite = () => {
   return gulp.src("source/img/icon-*.svg")
     .pipe(cheerio({
       run: ($) => {
-          $('[fill]').removeAttr('fill');
-          $('[opacity]').removeAttr('opacity');
+          $("[fill]").removeAttr("fill");
+          $("[opacity]").removeAttr("opacity");
+          $("[fill-rule]").removeAttr("fill-rule");
+          $("[clip-rule]").removeAttr("clip-rule");
       },
       parserOptions: { xmlMode: true }
     }))
