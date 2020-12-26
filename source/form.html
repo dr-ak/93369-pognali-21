@@ -133,28 +133,43 @@
           <source media="(min-width: 768px)" srcset="img/photo-form-user2-tablet.png 1x, img/photo-form-user2-tablet@2x.png 2x">
           <img src="img/photo-form-user2-mobile.png" srcset="img/photo-form-user2-mobile@2x.png 2x" alt="Фото Пети Демина">
         </picture>
-        <a href="" class="button button-type2">Сменить фото</a>
-        <p>#бургер #бар #футбол #концерт #крафт</p>
+        <label class="user-profile__photo">
+          <span>Сменить</span>фото
+          <input class="visually-hidden" type="file" id="photo-user" name="">
+        </label>
+        <textarea class="user-profile__tags" name="user-tags" id="user-tags" cols="" rows="">#бургер #бар #футбол #концерт #крафт</textarea>
         <ul class="user-profile__travel-types">
           <li class="user-profile__travel-type">
-            <svg width="21" height="21">
-              <use xlink:href="img/icon-lib.svg#icon-plane"></use>
-            </svg>
+            <input class="user-profile__checkbox visually-hidden" id="plane" type="checkbox" name="plane" checked>
+            <label for="plane">
+              <svg width="21" height="21">
+                <use xlink:href="img/icon-lib.svg#icon-plane"></use>
+              </svg>
+            </label>
           </li>
           <li class="user-profile__travel-type">
-            <svg width="17" height="19">
-              <use xlink:href="img/icon-lib.svg#icon-bus"></use>
-            </svg>
+            <input class="user-profile__checkbox visually-hidden" id="bus" type="checkbox" name="bus" checked>
+            <label for="bus">
+              <svg width="17" height="19">
+                <use xlink:href="img/icon-lib.svg#icon-bus"></use>
+              </svg>
+            </label>
           </li>
           <li class="user-profile__travel-type">
-            <svg width="24" height="24">
-              <use xlink:href="img/icon-lib.svg#icon-bicycle"></use>
-            </svg>
+            <input class="user-profile__checkbox visually-hidden" id="bicycle" type="checkbox" name="bicycle">
+            <label for="bicycle">
+              <svg width="24" height="24">
+                <use xlink:href="img/icon-lib.svg#icon-bicycle"></use>
+              </svg>
+            </label>
           </li>
           <li class="user-profile__travel-type">
-            <svg width="21" height="23">
-              <use xlink:href="img/icon-lib.svg#icon-run"></use>
-            </svg>
+            <input class="user-profile__checkbox visually-hidden" id="run" type="checkbox" name="run" checked>
+            <label for="run">
+              <svg width="21" height="23">
+                <use xlink:href="img/icon-lib.svg#icon-run"></use>
+              </svg>
+            </label>
           </li>
         </ul>
       </section>
@@ -164,8 +179,8 @@
         <ul class="plans__list">
           <li class="plans__item">
             <h3 class="plans__title">Франция, Италия</h3>
-            <div>3 попутчик</div>
-            <div>26 мар &mdash; 29мар</div>
+            <span class="plans__count-compaions">3 попутчик</div>
+            <span class="plans__dates">26 мар &mdash; 29мар</div>
             <a href="">Изменить</a>
           </li>
           <li class="plans__item">
@@ -179,129 +194,338 @@
 
       <section class="adding-plan">
         <h2 class="block-title">Добавить план:</h2>
-        <ul class="adding-plan__marker-list">
-          <li class="adding-plan__marker adding-plan__marker--active"></li>
-          <li class="adding-plan__marker"></li>
-          <li class="adding-plan__marker"></li>
+        <ul class="plan-form__marker-list">
+          <li class="plan-form__marker plan-form__marker--active">Даты</li>
+          <li class="plan-form__marker">Маршрут</li>
+          <li class="plan-form__marker">Развлечения</li>
         </ul>
-        <form class="plan-form" action="https://echo.htmlacademy.ru">
-          <fieldset class=plan-form__step1>
+        <form class="plan-form" action="https://echo.htmlacademy.ru" method="POST">
+          <fieldset class="plan-form plan-form__step1" id="step-1">
             <div class="plan-form__header">
               <h3 class="plan-form__title">Шаг 1.<br>Даты пребывания</h3>
               <p>
                 Укажите предпочтительное количество попутчиков, которых вы хотели бы позвать в поездку, и ее предполагаемую длительность.
               </p>
             </div>
-            <ul class="plan-form__marker-list">
-              <li class="plan-form__marker plan-form__marker--active">Даты</li>
-              <li class="plan-form__marker">Маршрут</li>
-              <li class="plan-form__marker">Развлечения</li>
-            </ul>
             <div class="plan-form__number-options">
               <ul class="plan-form__number-options-list">
                 <li class="paln-form__number-option">
-                  Ищу попутчиков
                   <label class="plan-form__count-companions">
-                    <a class="plan-form__increase" href="" aria-label="Увеличить на 1"></a>
-                    <input type="number" name="count-copanions" value="2">
-                    <a class="plan-form__decrease" href="" aria-label="Уменьшить на 1"></a>
+                    Ищу попутчиков
+                    <span class="plan-form__count-controls">
+                      <button class="plan-form__increase" href="" aria-label="Увеличить на 1"></button>
+                      <input type="number" name="count-copanions" value="2">
+                      <button class="plan-form__decrease" href="" aria-label="Уменьшить на 1"></button>
+                    </span>
+                    чел.
                   </label>
-                  чел.
                 </li>
                 <li class="paln-form__number-option">
-                  Длительность
                   <label class="plan-form__duration">
-                    <a  class="plan-form__increase" href="" aria-label="Увеличить на 1"></a>
-                    <input type="number" name="duration" value="2">
-                    <a  class="plan-form__decrease" href="" aria-label="Уменьшить на 1"></a>
+                    Длительность
+                    <span class="plant-form__count-controls">
+                      <button class="plan-form__increase" href="" aria-label="Увеличить на 1"></button>
+                      <input type="number" name="duration" value="3">
+                      <button class="plan-form__decrease" href="" aria-label="Уменьшить на 1"></button>
+                    </span>
+                    дн.
                   </label>
-                  дн.
                 </li>
               </ul>
-              <input class="plan-form__checkbox visually-hidden" id="with-children" type="checkbox" name="with-children">
+              <input class="plan-form__checkbox visually-hidden" id="with-children" type="checkbox" name="with-children" checked>
               <label class="order-form__name" for="with-children">
                 Можно с детьми
               </label>
             </div>
-            <table class="plan-form__table">
-              <caption>
-                <a class="prev" href="" aria-label="Предыдущий месяц"></a>
+            <table class="plan-form__table calendar">
+              <caption class=calendar__month>
+                <button class="calendar__month-button calendar__month-button--prev" href="" aria-label="Предыдущий месяц"></button>
                 Март 2019
-                <a class="next" href="" aria-label="Следующий месяц"></a>
+                <button class="calendar__month-button calendar__month-button--next" href="" aria-label="Следующий месяц"></button>
               </caption>
               <thead>
                 <tr>
-                  <th>Пн</th>
-                  <th>Вт</th>
-                  <th>Ср</th>
-                  <th>Чт</th>
-                  <th>Пт</th>
-                  <th>Сб</th>
-                  <th>Вс</th>
+                  <th class="calendar__week-day">Пн</th>
+                  <th class="calendar__week-day">Вт</th>
+                  <th class="calendar__week-day">Ср</th>
+                  <th class="calendar__week-day">Чт</th>
+                  <th class="calendar__week-day">Пт</th>
+                  <th class="calendar__week-day calendar__week-day--end">Сб</th>
+                  <th class="calendar__week-day calendar__week-day--end">Вс</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="plan-form__cell"><a>23</a></td>
-                  <td class="plan-form__cell"><a>24</a></td>
-                  <td class="plan-form__cell"><a>25</a></td>
-                  <td class="plan-form__cell"><a>26</a></td>
-                  <td class="plan-form__cell"><a>27</a></td>
-                  <td class="plan-form__cell"><a>28</a></td>
-                  <td class="plan-form__cell"><a>1</a></td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="23feb" type="checkbox" name="23feb" disabled>
+                    <label for="23feb">
+                      23
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="24feb" type="checkbox" name="24feb" disabled>
+                    <label for="24feb">
+                      24
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="25feb" type="checkbox" name="25feb" disabled>
+                    <label for="25feb">
+                      25
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="26feb" type="checkbox" name="26feb" disabled>
+                    <label for="26feb">
+                      26
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="27feb" type="checkbox" name="27feb" disabled>
+                    <label for="27feb">
+                      27
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="28feb" type="checkbox" name="28feb" disabled>
+                    <label for="28">
+                      28
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="1mar" type="checkbox" name="1mar" disabled>
+                    <label for="1mar">
+                      1
+                    </label>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="plan-form__cell"><a>2</a></td>
-                  <td class="plan-form__cell"><a>3</a></td>
-                  <td class="plan-form__cell"><a>4</a></td>
-                  <td class="plan-form__cell"><a>5</a></td>
-                  <td class="plan-form__cell"><a>6</a></td>
-                  <td class="plan-form__cell"><a>7</a></td>
-                  <td class="plan-form__cell"><a>8</a></td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="2mar" type="checkbox" name="2mar" disabled>
+                    <label for="2mar">
+                      2
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="3mar" type="checkbox" name="3mar" disabled>
+                    <label for="3mar">
+                      3
+                    </label>
+                  </td>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="4mar" type="checkbox" name="4mar" disabled>
+                    <label for="4mar">
+                      4
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="5mar" type="checkbox" name="5mar" disabled>
+                    <label for="5mar">
+                      5
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="6mar" type="checkbox" name="6mar" disabled>
+                    <label for="6mar">
+                      6
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="7mar" type="checkbox" name="7mar" disabled>
+                    <label for="7">
+                      7
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="8mar" type="checkbox" name="8mar" disabled>
+                    <label for="8mar">
+                      8
+                    </label>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="plan-form__cell"><a>9</a></td>
-                  <td class="plan-form__cell"><a>10</a></td>
-                  <td class="plan-form__cell"><a>11</a></td>
-                  <td class="plan-form__cell"><a>12</a></td>
-                  <td class="plan-form__cell"><a>13</a></td>
-                  <td class="plan-form__cell"><a>14</a></td>
-                  <td class="plan-form__cell"><a>15</a></td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="9mar" type="checkbox" name="9mar" disabled>
+                    <label for="9mar">
+                      9
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="10mar" type="checkbox" name="10mar" disabled>
+                    <label for="10mar">
+                      10
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="11mar" type="checkbox" name="11mar" disabled>
+                    <label for="11mar">
+                      11
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="12mar" type="checkbox" name="12mar" disabled>
+                    <label for="12mar">
+                      12
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="13mar" type="checkbox" name="13mar" disabled>
+                    <label for="13mar">
+                      13
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="14mar" type="checkbox" name="14mar" disabled>
+                    <label for="14mar">
+                      14
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="15mar" type="checkbox" name="15mar" disabled>
+                    <label for="15mar">
+                      15
+                    </label>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="plan-form__cell"><a>16</a></td>
-                  <td class="plan-form__cell"><a>17</a></td>
-                  <td class="plan-form__cell"><a>18</a></td>
-                  <td class="plan-form__cell"><a>19</a></td>
-                  <td class="plan-form__cell"><a>20</a></td>
-                  <td class="plan-form__cell"><a>21</a></td>
-                  <td class="plan-form__cell"><a>22</a></td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="16mar" type="checkbox" name="16mar" disabled>
+                    <label for="16mar">
+                      16
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="17mar" type="checkbox" name="17mar" disabled>
+                    <label for="17mar">
+                      17
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="18map" type="checkbox" name="18map" disabled>
+                    <label for="18map">
+                      18
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="19mar" type="checkbox" name="19mar" disabled>
+                    <label for="19mar">
+                      19
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="20mar" type="checkbox" name="20mar" disabled>
+                    <label for="20mar">
+                      20
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="21mar" type="checkbox" name="21mar" disabled>
+                    <label for="21mar">
+                      21
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="22mar" type="checkbox" name="22mar" disabled>
+                    <label for="22mar">
+                      22
+                    </label>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="plan-form__cell"><a>23</a></td>
-                  <td class="plan-form__cell"><a>24</a></td>
-                  <td class="plan-form__cell"><a>25</a></td>
-                  <td class="plan-form__cell plan-form__cell--hover"><a href="">26</a></td>
-                  <td class="plan-form__cell plan-form__cell--chosen"><a href="">27</a></td>
-                  <td class="plan-form__cell plan-form__cell--chosen"><a href="">28</a></td>
-                  <td class="plan-form__cell"><a href="">29</a></td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="23mar" type="checkbox" name="23mar" disabled>
+                    <label for="23mar">
+                      23
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="24mar" type="checkbox" name="24mar" disabled>
+                    <label for="24mar">
+                      24
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="25mar" type="checkbox" name="25mar" disabled>
+                    <label for="25mar">
+                      25
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="26mar" type="checkbox" name="26mar" checked>
+                    <label for="26mar">
+                      26
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="27mar" type="checkbox" name="27mar" checked>                    <label for="27mar">
+                      27
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="28mar" type="checkbox" name="28mar" checked>
+                    <label for="28mar">
+                      28
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month"><a href="">
+                    <input class="calendar__checkbox visually-hidden" id="29mar" type="checkbox" name="29mar">
+                    <label for="29mar">
+                      29
+                    </label>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="plan-form__cell"><a href="">30</a></td>
-                  <td class="plan-form__cell"><a href="">31</a></td>
-                  <td class="plan-form__cell"><a href="">1</a></td>
-                  <td class="plan-form__cell"><a href="">2</a></td>
-                  <td class="plan-form__cell"><a href="">3</a></td>
-                  <td class="plan-form__cell"><a href="">4</a></td>
-                  <td class="plan-form__cell"><a href="">5</a></td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="30mar" type="checkbox" name="30mar">
+                    <label for="30mar">
+                      30
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="31mar" type="checkbox" name="31mar">
+                    <label for="31mar">
+                      31
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="1apr" type="checkbox" name="1apr">
+                    <label for="1apr">
+                      1
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="2apr" type="checkbox" name="2apr">
+                    <label for="2apr">
+                      2
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="3apr" type="checkbox" name="3apr">
+                    <label for="3apr">
+                      3
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month"><a href="">
+                    <input class="calendar__checkbox visually-hidden" id="4apr" type="checkbox" name="4apr">
+                    <label for="4apr">
+                      4
+                    </label>
+                  </td>
+                  <td class="calendar__day-of-month">
+                    <input class="calendar__checkbox visually-hidden" id="5apr" type="checkbox" name="5apr">
+                    <label for="5apr">
+                      5
+                    </label>
+                  </td>
                 </tr>
               </tbody>
             </table>
             <div class="plan-form__footer">
-              <a class="button button-type2" href="">Следующий шаг</a>
+              <a class="button button-type2" href="#step-2">Следующий шаг</a>
             </div>
           </fieldset>
-          <fieldset class=plan-form__step2>
+          <fieldset class="plan-form plan-form__step2" id="step-2">
             <div class="plan-form__header">
               <h3 class="plan-form__title">Шаг 2.<br>Маршрут</h3>
               <p>
@@ -312,12 +536,12 @@
               <li class="plan-form__country">
                 <label class="plan-form__name">
                   <input id="country-name1" type="text" name="country-name1" placeholder="Босния и герцеговина">
-                  <a class="plan-form__open-list" href="" aria-label="Открыть список стран"></a>
+                  <button class="plan-form__open-list" aria-label="Открыть список стран"></button>
                 </label>
                 <span>
                   <img src="img/flag-bosnia-and-herzegovina.svg" alt="Флаг Боснии и Герцеговины" width="35" height="24">
                 </span>
-                <a class="plan-form__exclude" href="" aria-label="Убрать страну из списка"></a>
+                <button class="plan-form__exclude" aria-label="Убрать страну из списка"></button>
               </li>
               <li class="plan-form__country">
                 <label class="plan-form__name">
@@ -334,63 +558,188 @@
                   <input id="country-name3" type="text" name="country-name3" placeholder="Выберите страну">
                   <a class="plan-form__close-list" href="" aria-label="Закрыть список стран"></a>
                   <div class="plan-form__country-names">
-                    <ul class="plan-form__letters-list">
-                      <li class="plan-form__letter"><a href="">А</a></li>
-                      <li class="plan-form__letter"><a href="">Б</a></li>
-                      <li class="plan-form__letter"><a href="">В</a></li>
-                      <li class="plan-form__letter"><a href="">Г</a></li>
-                      <li class="plan-form__letter"><a href="">Д</a></li>
-                      <li class="plan-form__letter"><a href="">И</a></li>
-                      <li class="plan-form__letter"><a href="">З</a></li>
-                      <li class="plan-form__letter"><a href="">И</a></li>
-                      <li class="plan-form__letter"><a href="">К</a></li>
-                      <li class="plan-form__letter"><a href="">Л</a></li>
-                      <li class="plan-form__letter"><a href="">М</a></li>
-                      <li class="plan-form__letter"><a href="">Н</a></li>
-                      <li class="plan-form__letter"><a href="">О</a></li>
-                      <li class="plan-form__letter"><a href="">П</a></li>
-                      <li class="plan-form__letter"><a href="">Р</a></li>
-                      <li class="plan-form__letter"><a href="">С</a></li>
-                      <li class="plan-form__letter"><a href="">Т</a></li>
-                      <li class="plan-form__letter"><a href="">У</a></li>
-                      <li class="plan-form__letter"><a href="">Ф</a></li>
-                      <li class="plan-form__letter"><a href="">Х</a></li>
-                      <li class="plan-form__letter"><a href="">Ч</a></li>
-                      <li class="plan-form__letter"><a href="">Ш</a></li>
-                      <li class="plan-form__letter"><a href="">Э</a></li>
-                      <li class="plan-form__letter"><a href="">Ю</a></li>
-                      <li class="plan-form__letter"><a href="">Я</a></li>
+                    <ul class="plan-form__select-list">
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="a" type="radio" name="letter">
+                        <label for="a">
+                          А
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="b" type="radio" name="letter">
+                        <label for="b">
+                          Б
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="v" type="radio" name="letter">
+                        <label for="v">
+                          В
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="g" type="radio" name="letter">
+                        <label for="g">
+                          Г
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="d" type="radio" name="letter">
+                        <label for="d">
+                          Д
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="zh" type="radio" name="letter">
+                        <label for="zh">
+                          Ж
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="z" type="radio" name="letter">
+                        <label for="z">
+                          З
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="i" type="radio" name="letter">
+                        <label for="i">
+                          И
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="k" type="radio" name="letter">
+                        <label for="k">
+                          К
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="l" type="radio" name="letter">
+                        <label for="l">
+                          Л
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="m" type="radio" name="letter">
+                        <label for="m">
+                          М
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="n" type="radio" name="letter">
+                        <label for="n">
+                          Н
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="o" type="radio" name="letter">
+                        <label for="o">
+                          О
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="p" type="radio" name="letter">
+                        <label for="p">
+                          П
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="r" type="radio" name="letter">
+                        <label for="r">
+                          Р
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="s" type="radio" name="letter">
+                        <label for="s">
+                          С
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="t" type="radio" name="letter">
+                        <label for="t">
+                          Т
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="u" type="radio" name="letter">
+                        <label for="u">
+                          У
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="f" type="radio" name="letter">
+                        <label for="f">
+                          Ф
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="x" type="radio" name="letter">
+                        <label for="x">
+                          Х
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="ch" type="radio" name="letter">
+                        <label for="ch">
+                          Ч
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="sh" type="radio" name="letter">
+                        <label for="sh">
+                          Ш
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="b" type="radio" name="letter">
+                        <label for="e`">
+                          Э
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="yu" type="radio" name="letter">
+                        <label for="yu">
+                          Ю
+                        </label>
+                      </li>
+                      <li class="plan-form__item">
+                        <input class="plan-form__radio visually-hidden" id="ya" type="radio" name="letter">
+                        <label for="ya">
+                          Я
+                        </label>
+                      </li>
                     </ul>
-                    <ul class="plan-form__country-names-list">
-                      <li class="country-name"><a href="">Австралия</a></li>
-                      <li class="country-name"><a href="">Австрия</a></li>
-                      <li class="country-name"><a href="">Азербайджан</a></li>
-                      <li class="country-name"><a href="">Албания</a></li>
-                      <li class="country-name"><a href="">Алжир</a></li>
-                      <li class="country-name"><a href="">Ангола</a></li>
-                      <li class="country-name"><a href="">Андорра</a></li>
-                      <li class="country-name"><a href="">Антигуа и Барбуда</a></li>
-                      <li class="country-name"><a href="">Аргентина</a></li>
-                      <li class="country-name"><a href="">Армения</a></li>
-                      <li class="country-name"><a href="">Афганистан</a></li>
+                    <ul class="plan-form__select-sublist">
+                      <li class="plan-form__sub-item"><button type="button">Австралия</button></li>
+                      <li class="plan-form__sub-item"><button type="button">Австрия</button></li>
+                      <li class="plan-form__sub-item"><button type="button">Азербайджан</button></li>
+                      <li class="plan-form__sub-item"><button type="button">Албания</button></li>
+                      <li class="plan-form__sub-item"><button type="button">Алжир</button></li>
+                      <li class="plan-form__sub-item"><button type="button">Ангола</button></li>
+                      <li class="plan-form__sub-item"><button type="button">Андорра</button></li>
+                      <li class="plan-form__sub-item"><button type="button">Антигуа и Барбуда</button></li>
+                      <li class="plan-form__sub-item"><button type="button">Аргентина</button></li>
+                      <li class="plan-form__sub-item"><button type="button">Армения</button></li>
+                      <li class="plan-form__sub-item"><button type="button">Афганистан</button></li>
                     </ul>
                   </div>
                 </label>
-                <a class="plan-form__exclude" href="" aria-label="Убрать страну из списка"></a>
+                <button class="plan-form__exclude" type="button" aria-label="Убрать страну из списка"></button>
               </li>
               <li class="plan-form__country">
                 <label class="plan-form__name">
                   <input id="country-name4" type="text" name="country-name4" placeholder="Добавить страну">
-                  <a class="plan-form__include" href="" aria-label="Добавить страну"></a>
+                  <button class="plan-form__include" aria-label="Добавить страну"></button>
                 </label>
               </li>
             </ul>
             <div class="plan-form__footer">
-              <a class="button button-type2" href="">Следующий шаг</a>
-              <a class="plan-form__step-back" href="">На шаг назад</a>
+              <a class="button button-type2" href="#step-3">Следующий шаг</a>
+              <a class="plan-form__step-back" href="#step-2">На шаг назад</a>
             </div>
           </fieldset>
-          <fieldset class=plan-form__step3>
+          <fieldset class="plan-form plan-form__step3" id="step-3">
             <div class="plan-form__header">
               <h3 class="plan-form__title">Шаг 3.<br>Развлечения</h3>
               <p>
@@ -399,13 +748,13 @@
             </div>
             <ul class="plan-form__entertainments-list">
               <li class="plan-form__entertainments">
-                <label for="entertainments-country1">
+                <label for="entertainments-country entertainments-country--1">
                   Босния и Герцеговина<img src="img/flag-bosnia-and-herzegovina.svg" alt="Флаг Боснии и Герцеговины" width="35" height="24">
                 </label>
                 <textarea class="plan-form__textarea" id="entertainments-country1" name="entertainments-country1" placeholder="План действий"></textarea>
               </li>
               <li class="plan-form__entertainments">
-                <label for="entertainments-country2">
+                <label for="entertainments-country entertainments-country--2">
                   Чехия<img src="img/flag-czech.svg" alt="Флаг Чехии" width="35" height="24">
                 </label>
                 <textarea class="plan-form__textarea" id="entertainments-country2" name="entertainments-country2">Пить пиво и лазить по старым замкам, наслаждаться архитектурой и вот это все.
@@ -414,7 +763,7 @@
             </ul>
             <div class="plan-form__footer">
               <button class="button button-type2" type="submit">Отправить</button>
-              <a class="plan-form__step-back" href="">На шаг назад</a>
+              <a class="plan-form__step-back" href="#step-2">На шаг назад</a>
             </div>
           </fieldset>
         </form>
