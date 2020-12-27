@@ -118,7 +118,7 @@
       </div>
 
       <section class="choosing-country">
-        <h1 class="block-title">Фильтрация по странам:</h1>
+        <h2 class="block-title">Фильтрация по странам:</h2>
         <ul class="choosing-country__location-list">
           <li class="choosing-country__location"><a href="">Европа</a></li>
           <li class="choosing-country__location"><a href="">Азия</a></li>
@@ -537,7 +537,7 @@
         <h2 class="block-title">Подберите идеального попутчика</h2>
         <form class="companion-form" action="https://echo.htmlacademy.ru" method="POST">
           <fieldset class="companion-form__fieldset companion-form__fieldset--hobby">
-            <h3 class="companion-choice__title">Хобби:</h2>
+            <h3 class="companion-choice__title">Хобби:</h3>
             <ul class="companion-form__list companion-form__list--checkbox">
               <li class="companion-form__item">
                 <input class="companion-form__checkbox visually-hidden" id="gym" type="checkbox" name="gym" checked>
@@ -559,7 +559,7 @@
             </ul>
           </fieldset>
           <fieldset class="companion-form__fieldset companion-form__fieldset--music">
-            <h3 class="companion-choice__title">Музыка:</h2>
+            <h3 class="companion-choice__title">Музыка:</h3>
             <ul class="companion-form__list companion-form__list--checkbox">
               <li class="companion-form__item">
                 <input class="companion-form__checkbox visually-hidden" id="hard-rock" type="checkbox" name="hard-rock" checked>
@@ -581,7 +581,7 @@
             </ul>
           </fieldset>
           <fieldset class="companion-form__fieldset companion-form__fieldset--food">
-            <h3 class="companion-choice__title">Еда:</h2>
+            <h3 class="companion-choice__title">Еда:</h3>
             <ul class="companion-form__list companion-form__list--checkbox">
               <li class="companion-form__item">
                 <input class="companion-form__checkbox visually-hidden" id="meat-eater" type="checkbox" name="meat-eater" checked>
@@ -603,7 +603,7 @@
             </ul>
           </fieldset>
           <fieldset class="companion-form__fieldset companion-form__fieldset--transport">
-            <h3 class="companion-choice__title">Транспорт:</h2>
+            <h3 class="companion-choice__title">Транспорт:</h3>
             <ul class="companion-form__list companion-form__list--checkbox">
               <li class="companion-form__item">
                 <input class="companion-form__checkbox visually-hidden" id="plane" type="checkbox" name="plane" checked>
@@ -628,7 +628,7 @@
             </ul>
           </fieldset>
           <fieldset class="companion-form__fieldset companion-form__fieldset--level">
-            <h3 class="companion-form__title">Левел:</h2>
+            <h3 class="companion-form__title">Левел:</h3>
             <div class="range-filter">
               <div class="range-filter__controls">
                 <div class="range-filter__scale">
@@ -638,16 +638,18 @@
                 </div>
               </div>
               <div class="range-filter__fields">
-                <label class="range-filter__min-level">
-                  <input type="number" name="min-level" value="30">
+                <input type="number" name="min-level" id="min-level" value="30">
+                <label class="visually-hidden" for="min-level">
+                  Минимальный левел
                 </label>
-                <label class="range-filter__max-level">
-                  <input type="number" name="max-level" value="100">
+                <input type="number" name="max-level" id="max-level" value="100">
+                <label class="visually-hidden" for="max-level">
+                  Максимальный левел
                 </label>
               </div>
             </div>
           </fieldset>
-          <button class="button-type2" type="submit">Показать</button>
+          <button class="button-type-2" type="submit">Показать</button>
         </form>
         <ul class="companion-choice__list">
           <li class="companion-choice__item">
@@ -666,7 +668,7 @@
               </a>
               <p>#ЗОЖ #ПП #Фитнес #пляж  #авокадо #смузи</p>
               <div class="companion-item__wishes">
-                <h4 class=companion-item__sub-title>Хочет посетить:</h4>
+                <span class=companion-item__sub-title>Хочет посетить:</span>
                 <ul class="companion-item__flags">
                   <li class="companion-item__flag">
                     <img src="img/flag-sri-lanka.svg" alt="Флаг Шри-Ланки" width="35" height="24">
@@ -684,7 +686,7 @@
               </div>
               <div class="companion-item__block-icon">
                 <div class="companion-item__transport">
-                  <h4 class="companion-item__sub-title">Транспорт:</h4>
+                  <span class="companion-item__sub-title">Транспорт:</span>
                   <ul class="companion-item__travel-types">
                     <li class="companion-item__travel-type companion-item__travel-type--active">
                       <svg width="21" height="21">
@@ -709,7 +711,7 @@
                   </ul>
                 </div>
                 <div class="companion-item__level">
-                  <h4 class="companion-item__sub-title">Левел:</h4>
+                  <span class="companion-item__sub-title">Левел:</span>
                   <svg width="60" height="60" viewBox="0 0 60 60" fill="none" font-family="'Blogger Sans', 'Arial', sans-serif" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="30" cy="30" r="30" fill="black" fill-opacity="0.6"/>
                     <circle cx="30" cy="30" r="28" transform="rotate(-85 30 30)" stroke="#FF8D30" stroke-width="4" stroke-linecap="round" stroke-dasharray="172, 180" stroke-dashoffset="5"/>
@@ -720,8 +722,8 @@
                 </div>
               </div>
               <div class="companion-item__footer">
-                <a class="button-type2" href="">Позвать</a>
-                <div class="companion-item__like">
+                <a class="button-type-2" href="">Позвать</a>
+                <div class="companion-item__like companion-item__like--liked">
                   <span>
                     <svg width="12" height="12">
                       <use xlink:href="img/icon-lib.svg#icon-like"></use>
@@ -748,7 +750,7 @@
               </a>
               <p>#бургер #бар #футбол #концерт #крафт</p>
               <div class="companion-item__wishes">
-                <h4 class=companion-item__sub-title>Хочет посетить:</h4>
+                <span class=companion-item__sub-title>Хочет посетить:</span>
                 <ul class="companion-item__flags">
                   <li class="companion-item__flag">
                     <img src="img/flag-belgium.svg" alt="Флаг Бельгии" width="35" height="24">
@@ -762,7 +764,7 @@
               </div>
               <div class="companion-item__block-icon">
                 <div class="companion-item__transport">
-                  <h4 class="companion-item__sub-title">Транспорт:</h4>
+                  <span class="companion-item__sub-title">Транспорт:</span>
                   <ul class="companion-item__travel-types">
                     <li class="companion-item__travel-type companion-item__travel-type--active">
                       <svg width="21" height="21">
@@ -787,7 +789,7 @@
                   </ul>
                 </div>
                 <div class="companion-item__level">
-                  <h4 class="companion-item__sub-title">Левел:</h4>
+                  <span class="companion-item__sub-title">Левел:</span>
                   <svg width="60" height="60" viewBox="0 0 60 60" fill="none" font-family="'Blogger Sans', 'Arial', sans-serif" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="30" cy="30" r="30" fill="black" fill-opacity="0.6"/>
                     <circle cx="30" cy="30" r="28" transform="rotate(-85 30 30)" stroke="#FF8D30" stroke-width="4" stroke-linecap="round" stroke-dasharray="172, 180" stroke-dashoffset="25"/>
@@ -798,7 +800,7 @@
                 </div>
               </div>
               <div class="companion-item__footer">
-                <a class="button-type2" href="">Позвать</a>
+                <a class="button-type-2" href="">Позвать</a>
                 <div class="companion-item__like">
                   <span>
                     <svg width="12" height="12">
@@ -826,7 +828,7 @@
               </a>
               <p>#рэп #тату #хайпбист #кроссовки #суприм</p>
               <div class="companion-item__wishes">
-                <h4 class=companion-item__sub-title>Хочет посетить:</h4>
+                <span class=companion-item__sub-title>Хочет посетить:</span>
                 <ul class="companion-item__flags">
                   <li class="companion-item__flag">
                     <img src="img/flag-usa.svg" alt="Флаг США" width="35" height="24">
@@ -844,7 +846,7 @@
               </div>
               <div class="companion-item__block-icon">
                 <div class="companion-item__transport">
-                  <h4 class="companion-item__sub-title">Транспорт:</h4>
+                  <span class="companion-item__sub-title">Транспорт:</span>
                   <ul class="companion-item__travel-types">
                     <li class="companion-item__travel-type companion-item__travel-type--active">
                       <svg width="21" height="21">
@@ -869,7 +871,7 @@
                   </ul>
                 </div>
                 <div class="companion-item__level">
-                  <h4 class="companion-item__sub-title">Левел:</h4>
+                  <span class="companion-item__sub-title">Левел:</span>
                   <svg width="60" height="60" viewBox="0 0 60 60" fill="none" font-family="'Blogger Sans', 'Arial', sans-serif" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="30" cy="30" r="30" fill="black" fill-opacity="0.6"/>
                     <circle cx="30" cy="30" r="28" transform="rotate(-85 30 30)" stroke="#FF8D30" stroke-width="4" stroke-linecap="round" stroke-dasharray="172, 180" stroke-dashoffset="130"/>
@@ -880,7 +882,7 @@
                 </div>
               </div>
               <div class="companion-item__footer">
-                <a class="button-type2" href="">Позвать</a>
+                <a class="button-type-2" href="">Позвать</a>
                 <div class="companion-item__like">
                   <span>
                     <svg width="12" height="12">
@@ -894,7 +896,7 @@
           </li>
           <li class="companion-choice__item">
             <article class="companion-item">
-              <a href=""><h3 class="companion-item__title">Лариса Роговая</h3></a>
+              <a href=""><h3 class="companion-item__title companion-item__title--online">Лариса Роговая</h3></a>
               <a href="">
                 <picture>
                   <source type="image/webp" media="(min-width: 1440px)" srcset="img/photo-companion-user4-desktop.webp 1x, img/photo-companion-user4-desktop@2x.webp 2x">
@@ -908,7 +910,7 @@
               </a>
               <p>#образование #карьера #учеба #линкедин</p>
               <div class="companion-item__wishes">
-                <h4 class=companion-item__sub-title>Хочет посетить:</h4>
+                <span class=companion-item__sub-title>Хочет посетить:</span>
                 <ul class="companion-item__flags">
                   <li class="companion-item__flag">
                     <img src="img/flag-uk.svg" alt="Флаг Великобритании" width="35" height="24">
@@ -922,7 +924,7 @@
               </div>
               <div class="companion-item__block-icon">
                 <div class="companion-item__transport">
-                  <h4 class="companion-item__sub-title">Транспорт:</h4>
+                  <span class="companion-item__sub-title">Транспорт:</span>
                   <ul class="companion-item__travel-types">
                     <li class="companion-item__travel-type companion-item__travel-type--active">
                       <svg width="21" height="21">
@@ -947,7 +949,7 @@
                   </ul>
                 </div>
                 <div class="companion-item__level">
-                  <h4 class="companion-item__sub-title">Левел:</h4>
+                  <span class="companion-item__sub-title">Левел:</span>
                   <svg width="60" height="60" viewBox="0 0 60 60" fill="none" font-family="'Blogger Sans', 'Arial', sans-serif" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="30" cy="30" r="30" fill="black" fill-opacity="0.6"/>
                     <circle cx="30" cy="30" r="28" transform="rotate(-85 30 30)" stroke="#FF8D30" stroke-width="4" stroke-linecap="round" stroke-dasharray="172, 180" stroke-dashoffset="90"/>
@@ -958,7 +960,7 @@
                 </div>
               </div>
               <div class="companion-item__footer">
-                <a class="button-type2" href="">Позвать</a>
+                <a class="button-type-2" href="">Позвать</a>
                 <div class="companion-item__like">
                   <span>
                     <svg width="12" height="12">
@@ -981,8 +983,8 @@
             <li class="companion-choice__pagination-item"><a href="">4</a></li>
           </ul>
           <ul class="companion-choice__pagination-arrows">
-            <li class="companion-choice__pagination-arrow"></li>
-            <li class="companion-choice__pagination-arrow"></li>
+            <li class="companion-choice__pagination-arrow companion-choice__pagination-arrow--prev"><a href=""></a></li>
+            <li class="companion-choice__pagination-arrow companion-choice__pagination-arrow--next"><a href=""></a></li>
           </ul>
         </div>
       </section>
